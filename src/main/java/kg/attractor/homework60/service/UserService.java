@@ -36,9 +36,6 @@ public class UserService {
                 .name(userDTO.getName())
                 .mail(userDTO.getMail())
                 .pass(SecurityConfig.encoder().encode(userDTO.getPass()))
-                .publicationList(userDTO.getPublicationList())
-                .subscibers(userDTO.getSubscibers())
-                .subsciptions(userDTO.getSubsciptions())
                 .build();
         ur.save(user);
         return UserDTO.from(user);

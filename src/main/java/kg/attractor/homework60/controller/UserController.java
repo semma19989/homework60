@@ -2,16 +2,34 @@ package kg.attractor.homework60.controller;
 
 
 import kg.attractor.homework60.dto.UserDTO;
+import kg.attractor.homework60.model.Users;
+import kg.attractor.homework60.repository.UsersRepository;
 import kg.attractor.homework60.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    @Autowired
+    UsersRepository ur;
+
     UserService us;
 
     public UserController(UserService us) {
         this.us = us;
+    }
+
+    @PostMapping("/registration")
+    public Users createUser(@RequestParam("email")String email, @RequestParam("name")String name,
+                            @RequestParam("login")String login, @RequestParam("password")String password){
+        var user = new Users(UUID.randomUUID().toString(), name, login, email, password);
+        user.setPassword(user.getPassword());
+        ur.save(user);
+        return user;
     }
 
     @PostMapping()

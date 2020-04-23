@@ -1,7 +1,6 @@
 package kg.attractor.homework60.controller;
 
 
-import kg.attractor.homework60.annotations.ApiPageable;
 import kg.attractor.homework60.dto.CommentDTO;
 import kg.attractor.homework60.service.CommentService;
 import org.springframework.data.domain.Pageable;
@@ -9,8 +8,6 @@ import org.springframework.data.domain.Slice;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
-
-@ApiPageable
 @RestController
 @RequestMapping("/comment")
 public class CommentController {

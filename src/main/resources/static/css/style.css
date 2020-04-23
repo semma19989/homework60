@@ -16,3 +16,15 @@
 button{
     font-size: 20px;
 }
+
+.add-comment-form{
+    visibility: hidden;
+}
+
+.registration-form{
+    visibility: hidden;
+}
+
+.login-form{
+    visibility: hidden;
+}

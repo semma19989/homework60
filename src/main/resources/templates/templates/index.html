@@ -1,78 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <title>HomeWork_58</title>
-    
-	<link rel="stylesheet" href="../../../../../../Homework57/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="../../../../../../Homework57/script.js"></script>
+  <meta charset="UTF-8">
+  <title>Homework_58</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="/js/script.js"></script>
 </head>
 <body class="no-scroll">
-  <div class="container">
-  	<div class="row justify-content-center">
-  		
-      <div class="col col-lg-7 posts-container" id="posts">
-      	<button class="btn" onclick="showSplashScreen()">Show Splash Screen</button>
-        <!-- post start -->
-        <div class="card my-3">
-          <!--block start -->
-          <div>
-            <img class="d-block w-100" src="https://loremflickr.com/320/240" alt="Post image">
-          </div>
-        <!-- Photo -->
-          <div class="px-4 py-3">
-            <div class="d-flex justify-content-around">
-              <span class="h1 mx-2 muted like">
-                <i class="far  fa-heart"></i>
-              </span>
-              <span class="h1 mx-2 muted">
-                <i class="far fa-comment"></i>
-              </span>
-              <span class="mx-auto"></span>
-              <span class="h1 mx-2 muted Likemark">
-                <i class="far fa-likemark"></i>
-              </span>
-            </div>
-            <!-- post end -->
-            <hr>
-            <!-- section start -->
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ad est cumque nulla voluptatem enim voluptas minima illum quis! Voluptatibus dolorem minus tempore aliquid corrupti nesciunt, obcaecati fuga natus officiis.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ad est cumque nulla voluptatem enim voluptas minima illum quis! Voluptatibus dolorem minus tempore aliquid corrupti nesciunt, obcaecati fuga natus officiis.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ad est cumque nulla voluptatem enim voluptas minima illum quis! Voluptatibus dolorem minus tempore aliquid corrupti nesciunt, obcaecati fuga natus officiis.</p>
-            </div>
-            <!-- post end -->
-            <hr>
-            <!-- comments section start -->
-            <div id="comment">
-              <div class="py-2 pl-3">
-                <a href="#" class="muted">username</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ad est cumque nulla voluptatem enim voluptas minima illum quis! Voluptatibus dolorem minus tempore aliquid corrupti nesciunt, obcaecati fuga natus officiis.</p>
-              </div>
-              <div class="py-2 pl-3">
-                <a href="#" class="muted">someusername</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ad est cumque nulla voluptatem enim voluptas minima illum quis! Voluptatibus dolorem minus tempore aliquid corrupti nesciunt, obcaecati fuga natus officiis.</p>
-              </div>
-            </div>
-            <button onclick="addCommentElement(commentElement)">add comment</button>
-            <!-- comments end -->
-          </div>
+<div class="container">
+  <div class="row justify-content-center">
 
-        </div>
-        <!--  post end -->
-        <button onclick="addPostElement(postElement)">add post</button>
-      </div>
+    <div class="col col-lg-7 posts-container" id="posts">
+    </div>
+    <form id="form" name="form" enctype="multipart/form-data" action="/post" method="post">
+      <input type="hidden" name="userId" value="123">
+      <input type="hidden" name="id" value="123">
+      <input type="text" placeholder="Описание" name="des">
+      <input type="file" name="photo" id="photo">
+      <button type="button" id="addPost" onclick="a_fun()">Add</button>
+    </form>
 
+  </div>
+</div>
+<!-- Splash screen -->
+<section id="page-splash" class="page-splash">
+  <div class="card" id="registration-form1">
+    <div class="card-body">
+      <button class="btn" onclick="showLogForm()" style="font-size: 26px">Форма для входа</button>
+      <form id="login-form">
+        <h3>Вход</h3>
+        <input type="text" name="username" class="form-control mb-1" placeholder="Логин">
+        <input type="password" name="password" class="form-control mb-1" placeholder="Пароль">
+        <button class="btn btn-outline-primary btn-block">Войти</button>
+      </form>
+    </div>
+    <div class="card-body">
+      <button class="btn" onclick="showRegForm()" style="font-size: 26px">Форма для регистрации</button>
+      <form id="registration-form" class="registration-form">
+        <h3>Регистрация</h3>
+        <input type="email" name="email" class="form-control mb-1" placeholder="Email">
+        <input type="text" name="name" class="form-control mb-1" placeholder="Полное имя">
+        <input type="text" name="login" class="form-control mb-1" placeholder="Логин">
+        <input type="password" name="password" class="form-control mb-1" placeholder="Пароль">
+        <button class="btn btn-outline-primary btn-block">Зарегистрироваться</button>
+      </form>
     </div>
   </div>
-  <!-- Splash screen -->
-  <section id="page-splash" class="page-splash">
-  	<button class="btn" onclick="hideSplashScreen()">  <div class="card-body">
-        <h3 class="h3">Зарегистрируйтесь</h3>
-      </div>
-    </button><div class="card" id="registration-form"></div>
-  </section>
+</section>
 </body>
 </html>

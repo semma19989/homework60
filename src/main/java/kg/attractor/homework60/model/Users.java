@@ -3,6 +3,8 @@ package kg.attractor.homework60.model;
 
 import kg.attractor.homework60.util.Generator;
 import kg.attractor.homework60.util.SecurityConfig;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -15,28 +17,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 @Document(collection = "userList")
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Data
 @Builder
-public class Users<UserDetails> implements UserDetails {
+public class Users implements UserDetails {
     @Id
     private String id;
     private String name;
+    private String login;
     private String mail;
     private String pass;
-    @DBRef
-    @Builder.Default
-    private List<Publication> publicationList = new ArrayList<>();
-
-    @DBRef
-    @Builder.Default
-    private List<Users> subsciptions= new ArrayList<>();
-
-    @DBRef
-    @Builder.Default
-    private List<Users> subscibers= new ArrayList<>();
-
     public static Users random() {
         return builder()
                 .mail(Generator.makeEmail())

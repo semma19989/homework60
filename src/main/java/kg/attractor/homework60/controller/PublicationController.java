@@ -1,7 +1,7 @@
 package kg.attractor.homework60.controller;
 
 
-import kg.attractor.homework60.annotations.ApiPageable;
+
 import kg.attractor.homework60.dto.PublicationDTO;
 import kg.attractor.homework60.model.Publication;
 import kg.attractor.homework60.repository.PublicationRepository;
@@ -20,11 +20,9 @@ import java.io.IOException;
 import java.util.List;
 
 
-@ApiPageable
-@RestController
 @RequestMapping("/post")
 public class PublicationController {
-    @Autowired
+
     PublicationRepository pr;
     PublicationService ps;
 

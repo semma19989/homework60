@@ -1,5 +1,6 @@
 package kg.attractor.homework60.model;
 
+import kg.attractor.homework60.util.Generator;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -24,28 +25,8 @@ public class Publication {
     @DBRef
     private Users user;
 
-    /*public Publication(String id, String description, String imagePath){
-        Objects.requireNonNull(description);
-        Objects.requireNonNull(imagePath);
-        this.id = id;
-        this.description = description;
-        this.imagePath = imagePath;
+    public Publication(String id, String des, String imagePath, LocalDateTime now, String userId) {
     }
-
-    public Publication(String id, String description, String imagePath, LocalDateTime date, Users user) {
-        this.id = id;
-        this.description = description;
-        this.imagePath = imagePath;
-        this.date = date;
-        this.user = user;
-    }*/
-
-    /*public Candidate(String name, String photo) {
-
-        this.id = String.valueOf(name.hashCode()); //UUID.randomUUID().toString();
-        this.name = name;
-        this.photo = photo;
-    }*/
 
     public static Publication addPost(Users user) {
         Random r = new Random();

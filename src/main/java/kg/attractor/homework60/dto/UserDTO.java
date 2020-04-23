@@ -18,19 +18,12 @@ public class UserDTO {
     private String name;
     private String mail;
     private String pass;
-    private List<Publication> publicationList = new ArrayList<>();
-    private List<Users> subsciptions;
-    private List<Users> subscibers;
-
     public static UserDTO from(Users user) {
         return builder()
                 .id(user.getId())
                 .name(user.getName())
                 .mail(user.getMail())
                 .pass(user.getPass())
-                .publicationList(user.getPublicationList())
-                .subsciptions(user.getSubsciptions())
-                .subscibers(user.getSubscibers())
                 .build();
     }
 }
